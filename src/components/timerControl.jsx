@@ -20,7 +20,8 @@ function TimerControl(props){
     const {setCountSession}=useContext(EditorContext);  
     const {setCountBreak}= useContext(EditorContext);
     const {setTimerType}=useContext(EditorContext) 
-    const {setTimer}=useContext(EditorContext)    
+    const {setTimer}=useContext(EditorContext) 
+    const {colorText}=useContext(EditorContext)   
     
 
     /*Réinitialise toutes les variables*/
@@ -32,7 +33,9 @@ function TimerControl(props){
         setTimer(1500)
         const audioBeep=document.getElementById('beep')
         audioBeep.pause()   
-        audioBeep.currentTime=0          
+        audioBeep.currentTime=0  
+        colorText.setAttribute("style","color:black")
+        colorText.style.borderColor="black"        
         }  
         
         return <Container id="timerControleArray">                           
